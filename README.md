@@ -1,2 +1,1 @@
-# React + Vite
-# cv-builder
+Project using React and Vite!
