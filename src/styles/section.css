@@ -1,0 +1,21 @@
+.section{
+    overflow: hidden;
+}
+
+.hidden{
+    height: 0px;
+}
+
+.visible{
+    height: auto;
+}
+
+.section > header{
+    cursor: pointer;
+}
+
+.section-content{
+    display: grid;
+
+    transition: height 0.12s ease-in;
+}
