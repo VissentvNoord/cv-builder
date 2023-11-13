@@ -1,29 +1,43 @@
+import { useState } from "react"
+import SectionInput from "../SectionInput.jsx"
+import InputGroup from "../InputGroup.jsx";
 
-function FullName({ onChange, value }){
+function PersonalDetails({ onChange, fullName, email, phoneNumber, address }){
     return(
-        <div className="input-group">
-            <label htmlFor="full-name"></label>
-            <input onChange={onChange} type="text" id="full-name" value={value} data-key="fullName" />
-        </div>
-    )
-}
-
-function Email({ onChange, value }){
-    return(
-        <div className="input-group">
-            <label htmlFor="email"></label>
-            <input onChange={onChange} type="text" id="email" value={value} data-key="email" />
-        </div>
-    )
-}
-
-function PersonalDetails({ onChange, fullName, email, phoneNumber, adress }){
-    return(
-        <form className="personal-details">
-            <h2>Personal Details</h2>
-            <FullName onChange={onChange} value={fullName} />
-            <Email onChange={onChange} value={email} />
-        </form>
+        <SectionInput title={"Personal Details"} >
+            <InputGroup 
+            onChange={onChange}
+            label="Full name:"
+            id="fullName"
+            dkey="fullName"
+            type="text"
+            value={fullName}
+            />
+            <InputGroup 
+            onChange={onChange}
+            label="E-mail:"
+            id="email"
+            dkey="email"
+            type="email"
+            value={email}
+            />
+            <InputGroup 
+            onChange={onChange}
+            label="Phone number:"
+            id="phoneNumber"
+            dkey="phoneNumber"
+            type="tel"
+            value={phoneNumber}
+            />
+            <InputGroup 
+            onChange={onChange}
+            label="Place of residence:"
+            id="address"
+            dkey="address"
+            type="text"
+            value={address}
+            />
+        </SectionInput> 
     )
 }
 
