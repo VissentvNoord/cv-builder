@@ -13,12 +13,12 @@ function SectionInput({ title, children }){
 
     return(
         <>
-        <form className="input-section">
+        <div className="input-section">
             <header onClick={toggleOpen}><h2>{title}</h2></header>
             <div className={"input-section-content " + isOpen}>
                 {children}
             </div>
-        </form>
+        </div>
         </>
     )
 }

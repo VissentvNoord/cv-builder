@@ -5,12 +5,13 @@ import { exampleData } from "./components/example-data";
 import PersonalDetails from "./components/personal-info/PersonalDetails";
 import EducationDetails from "./components/education-info/EducationDetails";
 import ProfessionalDetails from "./components/professional-info/ProfessionalDetails";
+import ProfessionalInfo from "./components/professional-info/ProfessionalInfo";
 import Resume from "./components/Resume";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState(exampleData.personalInfo);
   const [educationInfo, setEducationInfo] = useState(exampleData.educationInfo);
-  const [professionalInfo, setProfessionalInfo] = useState(exampleData.professionalInfo);
+  const professionalInfo = new ProfessionalInfo(exampleData.professionalInfo);
 
   function handlePersonalInfoChange(e){
     const { key } = e.target.dataset;
@@ -24,7 +25,7 @@ function App() {
 
   function handleProfessionalInfoChange(e){
     const { key } = e.target.dataset;
-    setProfessionalInfo({...professionalInfo, [key]: e.target.value});
+    professionalInfo.setInfo({...professionalInfo.info, [key]: e.target.value});
   }
 
   return (
@@ -52,17 +53,13 @@ function App() {
           endDate={educationInfo.endDate}
           />
 
-          <ProfessionalDetails 
-          onChange={handleProfessionalInfoChange}
-          position={professionalInfo.position}
-          company={professionalInfo.company}
-          startDate={professionalInfo.startDate}
-          endDate={professionalInfo.endDate}
-          />
+          <ProfessionalDetails>
+          {professionalInfo.input}
+          </ProfessionalDetails>
         </div>
 
         <div id="output">
-          <Resume personalInfo={personalInfo} educationInfo={educationInfo} professionalInfo={professionalInfo}/>
+          <Resume personalInfo={personalInfo} educationInfo={educationInfo} professionalInfo={professionalInfo.info}/>
         </div>
       </div>
     </div>
