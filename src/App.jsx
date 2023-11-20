@@ -11,6 +11,8 @@ import PersonalDetails from "./components/personal-info/PersonalDetails";
 import Resume from "./components/Resume";
 import { CreateInfo } from "./components/createinfo";
 
+import generatePDF from "./components/PDFgenerator";
+
 function App() {
   const [personalInfo, setPersonalInfo] = useState(exampleData.personalInfo);
   const [educationInfo, setEducationInfo] = useState(exampleData.educationInfo);
@@ -78,6 +80,7 @@ function App() {
       className="App"
     >
       <h1>CV Builder!</h1>
+      <button onClick={generatePDF}>Save PDF</button>
       <div id="canvas">
         <div id="input">
           <PersonalDetails
