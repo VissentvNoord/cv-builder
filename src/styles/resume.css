@@ -1,0 +1,34 @@
+#personal-section{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+}
+
+#personal-section > .details{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px;
+}
+
+.education-details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.education-details > .date{
+    text-align: right;
+}
+
+#education-section, #professional-section{
+    display: grid;
+    gap: 20px;
+}
+
+.phone{
+    width: 1vw;
+    transform-origin: center;
+    justify-self: center;
+    align-self: center;
+}

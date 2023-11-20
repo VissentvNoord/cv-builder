@@ -17,11 +17,11 @@
 
 #input{
     display: grid;
-    gap: 20px;
     height: fit-content;
     width: 100%;
-    max-width: 600px;
-    justify-self: center;
+    max-width: 500px;
+    justify-self: right;
+    margin-right: 50px;
 }
 
 #output{
@@ -33,4 +33,20 @@
     box-shadow: 0 0 5px black;
     padding: 30px;
     font-size: .8vw;
+    word-wrap: break-word;
+    position: sticky;
+}
+
+textarea{
+    width: 420px;
+    max-width: 420px;
+    min-width: 200px;
+    min-height: 100px;
+}
+
+.input-group{
+    display: grid;
+    width: 100%;
+
+    margin-bottom: 20px;
 }

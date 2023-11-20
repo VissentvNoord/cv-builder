@@ -1,12 +1,12 @@
-function EducationInfoSection({ degree, school, city, country, startDate, endDate }){
+function EducationInfoSection({ degree, school, city, country, startDate, endDate, description }){
     return(
     <div className="education-info">
-        <h2>{school}</h2>
-        <p>{degree}</p>
-        <p>{city}</p>
-        <p>{country}</p>
-        <p>{startDate}</p>
-        <p>{endDate}</p>
+        <span className="education-details">
+            <p>{school}, {city}, {country}</p>
+            <p className="date">{startDate}-{endDate}</p>
+        </span>
+        <h3>{degree}</h3>
+        <p>{description}</p>
     </div>)
 }
 

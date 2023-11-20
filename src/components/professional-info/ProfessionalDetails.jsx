@@ -1,7 +1,7 @@
 import SectionInput from "../SectionInput.jsx";
 import InputGroup from "../InputGroup.jsx";
 
-function ProfessionalDetails({children}){
+function ProfessionalDetails({children, addEvent}){
     return(
         <SectionInput title={"Professional Details"} >
             {children}

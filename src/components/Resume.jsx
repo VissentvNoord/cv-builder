@@ -1,6 +1,7 @@
 import PersonalInfoSection from "./personal-info/PersonalSection";
 import EducationInfoSection from "./education-info/EducationSection";
 import ProfessionalInfoSection from "./professional-info/ProfessionalSection";
+import "../styles/resume.css";
 
 function Resume({personalInfo, educationInfo, professionalInfo}){
     return(
@@ -11,23 +12,43 @@ function Resume({personalInfo, educationInfo, professionalInfo}){
             phoneNumber={personalInfo.phoneNumber}
             address={personalInfo.address}
             />
-            <h1>Education</h1>
-            <EducationInfoSection 
-            degree={educationInfo.degree}
-            school={educationInfo.school}
-            city={educationInfo.city}
-            country={educationInfo.country}
-            startDate={educationInfo.startDate}
-            endDate={educationInfo.endDate}
-            />
-            <h1>Professional Career</h1>
-            <ProfessionalInfoSection 
-            position={professionalInfo.position}
-            company={professionalInfo.company}
-            startDate={professionalInfo.startDate}
-            endDate={professionalInfo.endDate}
-            />
+            <hr />
+            <p>Personal motivations and stuff!</p>
 
+            <h1>EDUCATION</h1>
+            <hr />
+
+            <div id="education-section">
+            {educationInfo.map((info) =>{
+                return(
+                <EducationInfoSection 
+                degree={info.degree}
+                school={info.school}
+                city={info.city}
+                country={info.country}
+                startDate={info.startDate}
+                endDate={info.endDate}
+                key={info.id}
+                description={info.description}
+                />);
+            })}
+            </div>
+
+            <h1>PROFESSIONAL EXPERIENCE</h1>
+            <hr />
+            <div id="professional-section">
+            {professionalInfo.map((info) =>{
+                return(
+                    <ProfessionalInfoSection 
+                    position={info.position}
+                    company={info.company}
+                    startDate={info.startDate}
+                    endDate={info.endDate}
+                    description={info.description}
+                    />
+                )
+            })}
+            </div>
         </div>
     );
 }

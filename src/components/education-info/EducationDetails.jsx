@@ -1,7 +1,7 @@
 import SectionInput from "../SectionInput.jsx";
 import InputGroup from "../InputGroup.jsx";
 
-function EducationDetails({ onChange, degree, school, city, country, startDate, endDate }){
+function EducationDetails({ onChange, degree, school, city, country, startDate, endDate, infoid }){
     return(
         <SectionInput title={"Educational Details"} >
             <InputGroup 
@@ -11,6 +11,7 @@ function EducationDetails({ onChange, degree, school, city, country, startDate, 
             dkey="degree"
             type="text"
             value={degree}
+            infoid={infoid}
             />
             <InputGroup 
             onChange={onChange}
@@ -19,6 +20,7 @@ function EducationDetails({ onChange, degree, school, city, country, startDate, 
             dkey="school"
             type="text"
             value={school}
+            infoid={infoid}
             />
             <InputGroup 
             onChange={onChange}
@@ -27,6 +29,7 @@ function EducationDetails({ onChange, degree, school, city, country, startDate, 
             dkey="city"
             type="text"
             value={city}
+            infoid={infoid}
             />
             <InputGroup 
             onChange={onChange}
@@ -35,6 +38,7 @@ function EducationDetails({ onChange, degree, school, city, country, startDate, 
             dkey="country"
             type="text"
             value={country}
+            infoid={infoid}
             />
             <InputGroup 
             onChange={onChange}
@@ -43,6 +47,7 @@ function EducationDetails({ onChange, degree, school, city, country, startDate, 
             dkey="startDate"
             type="text"
             value={startDate}
+            infoid={infoid}
             />
             <InputGroup 
             onChange={onChange}
@@ -51,6 +56,7 @@ function EducationDetails({ onChange, degree, school, city, country, startDate, 
             dkey="endDate"
             type="text"
             value={endDate}
+            infoid={infoid}
             />
         </SectionInput>
     )
